@@ -190,7 +190,7 @@ GET /superstore/_search
 ```
 
 ## Nested Query
-For demo nested query, please click [this]((https://github.com/saipulrx/training_elastic_cloud/tree/main/Day2_Module4/nested_query.md)
+For demo nested query, please click [this](https://github.com/saipulrx/training_elastic_cloud/tree/main/Day2_Module4/nested_query.md)
 ## Relevance Score
 ### Using the explain Parameter for Score Explanation
 ```
