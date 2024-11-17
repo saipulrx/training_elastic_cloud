@@ -4,6 +4,7 @@
 * [Using Cosine Similarity](#using-cosine-similarity)
 * [Using dot product Similarity](#using-dot-product-similarity)
 * [Using L2 Norm Similarity](#using-l2-norm-similarity)
+* [Semantic Search](#semantic-search)
 
 ## Using Cosine Similarity
 There are 4 step to use cosine similarity in elasticsearch :
@@ -108,6 +109,7 @@ GET vector_index/_search
   }
 }
 ```
+For python script, please refer to [this notebook](https://colab.research.google.com/github/elastic/elasticsearch-labs/blob/main/notebooks/search/04-multilingual.ipynb)
 
 ## Using dot product Similarity
 For using dot product Similarity is same with Cosine and only different just query dot product similarity
@@ -145,7 +147,7 @@ GET vector_index/_search
 ## Using L2 Norm Similarity
 For using L2 Norm Similarity is same with Cosine and only different just query L2 Norm similarity
 
-### Run query dense vector use dot product similarity
+### Run query dense vector use L2 Norm similarity
 Run script bellow in Dev Tools
 ```
 GET vector_index/_search
@@ -171,3 +173,7 @@ GET vector_index/_search
   }
 }
 ```
+
+## Semantic Search
+- For example semantic search with use simple data, please see run [semantic_search_example.py]()
+- For example semantic search with use case semantic text, please refer to [this notebook](https://colab.research.google.com/github/elastic/elasticsearch-labs/blob/main/notebooks/search/09-semantic-text.ipynb#scrollTo=24f0133923553d28) 

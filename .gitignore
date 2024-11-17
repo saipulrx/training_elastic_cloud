@@ -1,6 +1,8 @@
 .DS_Store
 Day2_Module4/dataset/.DS_Store
-
+Day4_vectorsearch/msmarco-passagetest2019-unique.tsv
+Day4_vectorsearch/python_client/dot_product_similarity-notused.py
+Day4_vectorsearch/python_client/dot_product_similarity.py
 logstash_elastic_cloud.conf
 rennes_traffic-default_test.conf
 metricbeat.yml
