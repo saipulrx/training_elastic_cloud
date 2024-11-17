@@ -6,4 +6,5 @@ Day4_vectorsearch/python_client/dot_product_similarity.py
 logstash_elastic_cloud.conf
 rennes_traffic-default_test.conf
 metricbeat.yml
+Day4_Monitoring/terraform/terraform.tfvars
 ~$*
