@@ -7,4 +7,6 @@ logstash_elastic_cloud.conf
 rennes_traffic-default_test.conf
 metricbeat.yml
 Day4_Monitoring/terraform/terraform.tfvars
+../.DS_Store
+../dataset/.DS_Store
 ~$*

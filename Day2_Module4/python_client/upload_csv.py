@@ -56,8 +56,8 @@ def upload_csv_to_elasticsearch(file_path, index_name):
 
 if __name__ == "__main__":
     # Specify your CSV file path and Elasticsearch index name
-    csv_file_path = "../dataset/superstore.csv"
-    index_name = "superstore"
+    csv_file_path = "../dataset/capital.csv"
+    index_name = "capital"
 
     # Upload the CSV file to Elasticsearch
     upload_csv_to_elasticsearch(csv_file_path, index_name)
