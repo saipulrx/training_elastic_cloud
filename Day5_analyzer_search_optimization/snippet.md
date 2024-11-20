@@ -2,6 +2,9 @@
 
 ## <em>Quick links to the recipes</em>
 * [Example Tokenization and Normalization](#example-tokenization-and-normalization)
+* [Example Standar Tokenizer](#example-standar-tokenizer)
+* [Example Ngram Tokenizer](#example-ngram-tokenizer)
+* [Example Edge Ngram Tokenizer](#example-edge-ngram-tokenizer)
 * [Built in Analyzer](#built-in-analyzer)
 * [Custom Analyzer and Compare with default Analyzer](#custom-analyzer-and-compare-with-default-analyzer)
 
@@ -66,12 +69,110 @@ GET my_index/_search
 }
 ```
 
+## Example Standar Tokenizer
+```
+POST /_analyze
+{
+  "tokenizer": "standard",
+  "text": "The quick-brown fox jumps over lazy dogs. Email: example@test.com"
+}
+```
+
+## Example of Ngram Tokenizer
+Use Case:
+Useful for fuzzy matching or substring search.
+- Create an Index with N-gram Tokenizer:
+```
+PUT /ngram_example
+{
+  "settings": {
+    "analysis": {
+      "tokenizer": {
+        "ngram_tokenizer": {
+          "type": "ngram",
+          "min_gram": 2,
+          "max_gram": 3
+        }
+      },
+      "analyzer": {
+        "ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "ngram_tokenizer",
+          "filter": ["lowercase"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "analyzer": "ngram_analyzer"
+      }
+    }
+  }
+}
+```
+- Test the N-gram Tokenizer:
+```
+POST /ngram_example/_analyze
+{
+  "analyzer": "ngram_analyzer",
+  "text": "hello"
+}
+```
+
+## Example Edge Ngram Tokenizer
+Use Case:
+Useful for autocomplete or search-as-you-type.
+- Create an Index with Edge N-gram Tokenizer:
+```
+PUT /edge_ngram_example
+{
+  "settings": {
+    "analysis": {
+      "tokenizer": {
+        "edge_ngram_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 3
+        }
+      },
+      "analyzer": {
+        "edge_ngram_analyzer": {
+          "type": "custom",
+          "tokenizer": "edge_ngram_tokenizer",
+          "filter": ["lowercase"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "analyzer": "edge_ngram_analyzer"
+      }
+    }
+  }
+}
+```
+
+- Test the Edge N-gram Tokenizer:
+```
+POST /edge_ngram_example/_analyze
+{
+  "analyzer": "edge_ngram_analyzer",
+  "text": "hello"
+}
+```
+
 ## Built in Analyzer
 ### Standar Analyzer(default)
 ```
 POST /_analyze
 {
-  "analyzer": "simple",
+  "analyzer": "standar",
   "text": "The Quick Brown Fox jumps-over 123 times!"
 }
 ```
