@@ -78,7 +78,7 @@ POST /_analyze
 }
 ```
 
-## Example of Ngram Tokenizer
+## Example Ngram Tokenizer
 Use Case:
 Useful for fuzzy matching or substring search.
 - Create an Index with N-gram Tokenizer:
